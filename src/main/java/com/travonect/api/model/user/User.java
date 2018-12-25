@@ -10,59 +10,33 @@ public class User {
     @Id
     private String email;
     private String gender;
-    private Name name;
-    private Address location;
-    private Login login;
-    private Dob dob;
-    private Profession profession;
-    private String phone;
-    private String cell;
-    private Picture picture;
+    private String name;
+    private String jobTitle;
+    private String organization;
+    private List<Picture> pictures;
+    private String city;
     private String nationality;
     private Education education;
     private List<Trip> trips;
     private String aboutMe;
+    private UserBasicInfo userBasicInfo;
 
     public String getGender() {
         return gender;
     }
 
-    public Name getName() {
+    public String getName() {
         return name;
     }
 
-    public Address getLocation() {
-        return location;
+    public String getCity() {
+        return city;
     }
 
     public String getEmail() {
         return email;
     }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public Dob getDob() {
-        return dob;
-    }
-
-    public Profession getProfession() {
-        return profession;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getCell() {
-        return cell;
-    }
-
-    public Picture getPicture() {
-        return picture;
-    }
-
+    
     public String getNationality() {
         return nationality;
     }
@@ -71,40 +45,16 @@ public class User {
         this.gender = gender;
     }
 
-    public void setName(Name nameObject) {
-        this.name = nameObject;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setLocation(Address locationObject) {
-        this.location = locationObject;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setLogin(Login loginObject) {
-        this.login = loginObject;
-    }
-
-    public void setDob(Dob dobObject) {
-        this.dob = dobObject;
-    }
-
-    public void setProfession(Profession registeredObject) {
-        this.profession = registeredObject;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setCell(String cell) {
-        this.cell = cell;
-    }
-    
-    public void setPicture(Picture pictureObject) {
-        this.picture = pictureObject;
     }
 
     public void setNationality(String nat) {
@@ -133,5 +83,37 @@ public class User {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
+    }
+    
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public List<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Picture> pictures) {
+        this.pictures = pictures;
+    }
+
+    public UserBasicInfo getUserBasicInfo() {
+        return userBasicInfo;
+    }
+
+    public void setUserBasicInfo(UserBasicInfo userBasicInfo) {
+        this.userBasicInfo = userBasicInfo;
     }
 }

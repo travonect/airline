@@ -1,6 +1,7 @@
 package com.travonect.api.controller;
 
 import com.travonect.api.model.user.User;
+import com.travonect.api.model.user.UserBasicInfo;
 import com.travonect.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -31,9 +32,14 @@ public class UserController {
         return userService.updateUser(user);
     }
 
-    @RequestMapping(value = "/deleteUserbyEmail", method = RequestMethod.DELETE, consumes = MediaType.TEXT_PLAIN_VALUE)
+    @RequestMapping(value = "/deleteUserByEmail", method = RequestMethod.DELETE, consumes = MediaType.TEXT_PLAIN_VALUE)
     public void delete(@RequestBody String email) {
         userService.deleteUserByEmail(email);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/updateUserBasicInfo", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User updateUserBasicInfo(@RequestBody String email, @RequestBody UserBasicInfo userBasicInfo) {
+        return userService.updateUserBasicInfo(email, userBasicInfo);
     }
 
 }
